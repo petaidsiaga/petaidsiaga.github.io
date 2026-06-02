@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 429 417">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000;
+        font-family: Fresca-Regular, Fresca;
+        font-size: 37.97px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2-2" data-name="Layer 2">
+    <image width="429" height="417" xlink:href="../../ASSET/Select_Hover.png"/>
+    <image width="539" height="550" transform="translate(89.05 74.51) scale(.47)" xlink:href="../../ASSET/obat_kucing3.png"/>
+    <text class="cls-1" transform="translate(101.35 345.58)"><tspan x="0" y="0">Tolak Tawaran</tspan></text>
+  </g>
+</svg>
