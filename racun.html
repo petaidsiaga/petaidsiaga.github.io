@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="racun.css">
+    <link href="https://fonts.googleapis.com/css?family=Preahvihear:400" rel="stylesheet">
+    <title>PetAid Siaga!</title>
+    <link rel="icon" href="asset/icon.png">
+</head>
+
+<body>
+    <audio id="sfx-correct" src="sfx/correct.mp3" preload="auto"></audio>
+    <audio id="sfx-wrong" src="sfx/wrong.mp3" preload="auto"></audio>
+
+    <div class="VID">
+
+        <div class="video-wrap">
+
+            <video id="myVideo">
+                <source src="render2/Story 3 General Scenario.mp4" type="video/mp4">
+            </video>
+
+            <div class="ending-overlay" id="overlay1">
+                <p class="overlay-title">Apa yang ingin kamu lakukan?</p>
+
+                <div class="overlay-buttons">
+                    <button class="overlay-button choice-trigger"
+                     data-hover="asset/Racun 1 Hover.png"
+                     data-idle="asset/Racun 2 Idle_1.png"
+                     data-text="Meski kutu kucing dan anjing terlihat mirip, obat kutu anjing tidak bisa sembarangan dipakai untuk kucing! Obat kutu anjing mengandung zat bernama Permethrin yang berbahaya bagi kucing. Sistem metabolisme kucing sangat unik, sehingga bahkan kontak kecil sekalipun — seperti bergesekan dengan anjing yang baru diobati — sudah bisa menimbulkan reaksi yang fatal. Jadi, selalu gunakan obat sesuai label hewannya masing-masing ya, kecuali sudah ada rekomendasi langsung dari dokter hewanmu!"
+                     data-video="render2/Story 3 Good 1.mp4"
+                     data-choice="choice1"
+                     data-verdict="BETUL!"
+                     data-verdict-color="green"
+                     data-explain1="image/image1.png"
+                     data-explain2="image/image2.png"
+                     data-source="Sumber: <br> 1. International Cat Care; Permethrin Poisoning <br> 2. Feline Emergency and Critical Care Second Edition; Toxicological Emergency">
+                        <img src="asset/Racun 2 Idle_1.png">
+                    </button>
+
+                    <button class="overlay-button choice-trigger"
+                    data-hover="asset/Racun 2 Hover.png"
+                    data-idle="asset/Racun 2 Idle.png"
+                    data-text="Meski kutu kucing dan anjing terlihat mirip, obat kutu anjing tidak bisa sembarangan dipakai untuk kucing! Obat kutu anjing mengandung zat bernama Permethrin yang berbahaya bagi kucing. Sistem metabolisme kucing sangat unik, sehingga bahkan kontak kecil sekalipun — seperti bergesekan dengan anjing yang baru diobati — sudah bisa menimbulkan reaksi yang fatal. Gejala keracunan Permethrin yang ringan bisa terlihat seperti tremor, gemetar, sensitif berlebihan terhadap sentuhan dan suara, hingga kehilangan kendali tubuh. Dan semakin parah gejalanya, semakin kecil peluang kucing untuk bertahan — jadi jangan sampai ditunda! Kalau kamu curiga kucingmu keracunan, bawa juga barang yang dicurigai sebagai penyebabnya dalam wadah tertutup ke dokter hewan. Ini akan sangat membantu mereka dalam menentukan penanganan yang tepat!"
+                    data-video="render2/Story 3 Branch.mp4"
+                    data-choice="choice2"
+                    data-verdict="SALAH!"
+                    data-verdict-color="red"
+                    data-explain1="image/image1.png"
+                    data-explain2="image/image2.png"
+                    data-source="Sumber: <br> 1. International Cat Care; Permethrin Poisoning <br> 2. Feline Emergency and Critical Care Second Edition; Toxicological Emergency">
+                        <img src="asset/Racun 2 Idle.png">
+                    </button>
+                </div>
+
+                <button class="overlay-replay-btn base-replay-style">
+                     <div class="btn-inner">
+                        <img src="svg button/button2.svg">
+                        <span>Ulangi</span>
+                     </div>
+                </button>
+
+                <div class="overlay-shape" id="shape1"></div>
+            </div>
+
+            <div class="detail-panel" id="detail1">
+                <div class="detail-shape"></div>
+
+                <div class="detail-content">
+                    <div class="detail-left">
+                        <p class="detail-top-row">
+                            Pilihanmu.... <span class="detail-verdict"></span>
+                        </p>
+                        <p class="detail-text"></p>
+                    </div>
+
+                    <div class="detail-right">
+                        <img class="detail-img1" src="">
+                        <img class="detail-img2" src="">
+                    </div>
+                </div>
+
+                <button class="detail-confirm" id="confirm1">
+                    <img src="svg button/button3.svg">
+                    <span>Lanjut</span>
+                </button>
+            </div>
+
+            <div class="ending-overlay" id="overlay2">
+                <p class="overlay-title">Apa yang ingin kamu lakukan?</p>
+
+                <div class="overlay-buttons">
+                    <button class="overlay-button branch-trigger"
+                        data-hover="asset/Kejang 1 Hover.png"
+                        data-idle="asset/Kejang 1 Idle.png"
+                        data-text="Saat kucing kejang, coba lapisi area sekitarnya dengan handuk atau benda empuk lainnya untuk mencegah kucing terluka akibat terbentur benda keras. Penyebab kejang sendiri bisa dibagi menjadi dua kategori: yang berasal dari dalam otak, dan yang berasal dari luar otak. Kalau penyebabnya ada di otak, bisa jadi kucing memang memiliki epilepsi. Namun untuk kasus keracunan, kejang biasanya tidak akan berulang — kecuali kucing kembali terpapar racun yang sama. Apapun penyebabnya, kalau ini adalah pertama kali kucingmu mengalami kejang, segera bawa ke dokter hewan ya untuk mendapatkan diagnosa dan penanganan yang tepat!"
+                        data-video="render2/Story 3 Good 2.mp4"
+                        data-choice="choice3"
+                        data-verdict="BETUL!"
+                        data-verdict-color="green"
+                        data-explain1="image/image1.png"
+                        data-explain2="image/image2.png"
+                        data-source="Sumber: <br> 1. American Red Cross <br> 2. PetMD <br> 3. hillspet, author Dr. Sarah Wooten">
+                        <img src="asset/Kejang 1 Idle.png">
+                    </button>
+
+                    <button class="overlay-button branch-trigger"
+                        data-hover="asset/Kejang 2 Hover.png"
+                        data-idle="asset/Kejang 2 Idle.png"
+                        data-text="Saat kejang, kucing tidak bisa mengontrol gerakan tubuhnya and seringkali tidak sepenuhnya sadar — jadi kamu pun berisiko terluka kalau tidak hati-hati! Kalau terpaksa harus memegang atau mengamankan kucing yang sedang kejang, jauhkan tanganmu dari area mulutnya, karena gigitan kucing dalam kondisi ini bisa sangat kuat dan menyakitkan. Penyebab kejang sendiri bisa dibagi menjadi dua kategori: yang berasal dari dalam otak, dan yang berasal dari luar otak. Kalau penyebabnya ada di otak, bisa jadi kucing memang memiliki epilepsi. Namun untuk kasus keracunan, kejang biasanya tidak akan berulang — kecuali kucing kembali terpapar racun yang sama. Apapun penyebabnya, kalau ini adalah pertama kali kucingmu mengalami kejang, segera bawa ke dokter hewan ya untuk mendapatkan diagnosa dan penanganan yang tepat!"
+                        data-video="render2/Story 3 Bad.mp4"
+                        data-choice="choice4"
+                        data-verdict="SALAH!"
+                        data-verdict-color="red"
+                        data-explain1="image/image1.png"
+                        data-explain2="image/image2.png"
+                        data-source="Sumber: <br> 1. American Red Cross <br> 2. PetMD <br> 3. hillspet, author Dr. Sarah Wooten">
+                        <img src="asset/Kejang 2 Idle.png">
+                    </button>
+                </div>
+
+                <button class="overlay-replay-btn base-replay-style">
+                     <div class="btn-inner">
+                        <img src="svg button/button2.svg">
+                        <span>Coba Ulang</span>
+                     </div>
+                </button>
+
+                <div class="overlay-shape" id="shape2"></div>
+            </div>
+
+            <div class="detail-panel" id="detail2">
+                <div class="detail-shape"></div>
+                <div class="detail-content">
+                    <div class="detail-left">
+                        <p class="detail-top-row">
+                            Pilihanmu.... <span class="detail-verdict"></span>
+                        </p>
+                        <p class="detail-text"></p>
+                    </div>
+                    <div class="detail-right">
+                        <img class="detail-img1" src="">
+                        <img class="detail-img2" src="">
+                    </div>
+                </div>
+                <button class="detail-confirm" id="confirm2">
+                    <img src="svg button/button2.svg">
+                    <span>Lanjut</span>
+                </button>
+            </div>
+
+            <button class="retry-btn">
+                 <div class="btn-inner">
+                    <img src="svg button/button2.svg">
+                    <span>Coba Ulang</span>
+                 </div>
+            </button>
+
+            <button class="good-replay-btn base-replay-style">
+                 <div class="btn-inner">
+                    <img src="svg button/button2.svg">
+                    <span>Ulangi</span>
+                 </div>
+            </button>
+
+        </div>
+
+         <div class="Pause">
+            <img class="playicon" src="svg button/noun-play-button-6124838.svg">
+        </div>
+        
+        <div class="source-bar">
+            <img class="source-bg" src="webp/clippy.webp">
+            <p class="source-text"></p>
+        </div>
+
+        <div class="frame">
+            <img src="fixedass/framed2.webp">
+        </div>
+
+    </div>
+
+    <a href="Choice.html" class="choice">
+        <img src="fixedass/Back Button2.1.svg">
+    </a>
+
+    <img class="sceneicon" src="fixedass/racun 2.svg">
+
+    <script src="pause 3.js"></script>
+</body>
+</html>

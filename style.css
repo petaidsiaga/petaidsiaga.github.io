@@ -1,0 +1,205 @@
+body {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+
+    background: linear-gradient(
+    135deg,
+    #EEF5F5 0%,
+    #D6ECF5 50%,
+    #A8D8F0 100%
+);
+
+background-size: 200% 200%;
+}
+
+.viewport {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  z-index: 1;
+
+  overflow: hidden;
+}
+
+.cta-group {
+    position: absolute;
+
+    right: clamp(70px, 11vw, 240px);
+    top: 75%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: clamp(12px, 2vh, 30px);
+
+    z-index: 10;
+}
+
+.cta-group p {
+    margin: 0;
+
+    font-size: clamp(18px, 1.8vw, 32px);
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    color: #2a6a9a ;
+}
+
+.bartop {
+  position: absolute;
+
+  top: 5vh;
+  right: 8%;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+
+  gap: clamp(20px, 4vw, 80px);
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.bartop a{
+  text-decoration: none;
+  color: #2a6a9a ;
+  font-size: 20px;
+  position: relative;
+}
+
+.bartop a::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -8px;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: black;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.bartop a:hover::after {
+    transform: scaleX(1);
+}
+
+.circle {
+  position: absolute;
+  left: -30vh;
+  top: -20vh;
+  height: 150vh;
+  width: 150vh;
+  background: radial-gradient(
+  circle at 30% 30%,
+  #F7FDFF 0%,
+  #D9F1FF 30%,
+  #A8D8F0 70%,
+  #6FB7E9 100%
+  );
+  box-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+}
+
+.jeruk {
+  position: absolute;
+
+  top: 12vh;
+}
+
+.jeruk img{
+    width: 115vh;
+    height: auto;
+}
+
+.bandage {
+  position: absolute;
+
+  top: 5vh;
+  left: 55vh;
+}
+
+.bandage img {
+  width: 25vh;
+}
+
+.bandaid {
+  position: absolute;
+
+  top: 75vh;
+  left: 10vh;
+}
+
+.bandaid img {
+  width: 25vh;
+}
+
+.title {
+    position: absolute;
+
+    top: clamp(20px, 5vh, 80px);
+    left: 50%;
+
+    transform: translate(30%, 65%);
+    
+
+    z-index: 10;
+}
+
+.title img {
+    width: clamp(280px, 32vw, 700px);
+
+    display: block;
+}
+
+.pelajari {
+  position: relative;
+  display: inline-block;
+}
+
+.pelajari:hover {
+  transform: scale(1.03);
+  transition: 0.2s ease;
+  filter: drop-shadow(0 6px 12px rgba(73, 65, 79, 0.35));
+}
+
+.pelajari img {
+  width: 200px;
+  transition: 0.2s ease;
+  display: block;
+  filter: drop-shadow(0 2px 5px rgba(73, 65, 79, 0.3));
+}
+
+.pelajari span {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  color: rgb(104, 55, 27);
+  font-size: 24px;
+}

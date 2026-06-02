@@ -1,0 +1,164 @@
+body {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+     background: linear-gradient(
+        135deg,
+        #EEF5F5 0%,
+        #D6ECF5 50%,
+        #A8D8F0 100%
+    );
+    margin: 0;
+}
+
+.viewport {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  z-index: 1;
+
+  overflow: hidden;
+}
+
+.para1 {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 5%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: clamp(24px, 2.5vw, 40px);
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+.kembali {
+  position: absolute;
+  left: 5%;
+  top: 85%;
+
+  z-index: 20;
+  display: inline-block;
+}
+
+.kembali img {
+  width: 200px;
+  transition: 0.2s ease;
+  filter: drop-shadow(0 2px 5px rgba(73, 65, 79, 0.3));
+}
+
+.kembali:hover {
+  transform: scale(1.03);
+  transition: 0.2s ease;
+  filter: drop-shadow(0 6px 12px rgba(73, 65, 79, 0.35));
+}
+
+.kembali span {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  color: rgb(104, 55, 27);
+  font-size: 24px;
+}
+
+.box {
+  position: absolute;
+  z-index: 1;
+
+  left: -63%;
+  top: -55%;
+  width: 160vw;
+  height: 60vw;
+
+  background: radial-gradient(
+    circle at 30% 30%,
+    #c7d2d6 0%,
+    #D9F1FF 30%,
+    #A8D8F0 70%,
+    #4c9bb5 100%
+  );
+
+  mask:
+    radial-gradient(51.61px at 50% calc(100% - 72px),#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
+    radial-gradient(51.61px at 50% calc(100% + 42px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
+
+  transform: rotate(-20deg);
+  opacity: 0.8;
+}
+
+
+
+.thumbnail {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  z-index: 5;
+}
+
+.tabrak img, .sesak img, .racun img {
+  width: 25vw;
+  height: auto;
+
+  border-radius: 25px;
+
+  display: block;
+
+  transition: 0.2s ease;
+
+  filter: drop-shadow(0 2px 5px rgba(73, 65, 79, 0.3));
+}
+
+.tabrak:hover img, .sesak:hover img, .racun:hover img {
+  transform: scale(1.03);
+
+  filter: drop-shadow(0 6px 12px rgba(73, 65, 79, 0.35));
+}
+
+.tabrak, .sesak, .racun {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 15px;
+
+  text-decoration: none;
+
+  z-index: 5;
+}
+
+.tabrak span, .sesak span, .racun span {
+  color: black;
+  font-size: 30px;
+}
+
+
+.tabrak {
+  top: 20%;
+  left: 15%;
+}
+
+.sesak {
+  top: 20%;
+  left: 60%;
+}
+
+.racun {
+  top: 55%;
+  left: 38%;
+}

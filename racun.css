@@ -1,0 +1,601 @@
+body {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    background-image:
+        linear-gradient(
+            135deg,
+            #7ac2fa 0%,
+            #3685c2 35%,
+            #4ba5e9 70%,
+            #7ac2fa 100%
+        ),
+        linear-gradient(to right, rgba(255,255,255,0.15) 3px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.15) 3px, transparent 1px);
+    background-size:
+        cover,
+        135px 135px,
+        135px 135px;
+    background-repeat:
+        no-repeat,
+        repeat,
+        repeat;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-size: 135px 135px;
+    background-image:
+        linear-gradient(to right, rgba(255,255,255,0.15) 3px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.15) 3px, transparent 1px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── 1. VID centered ── */
+.VID {
+    position: relative;
+    width: min(92vw, 1600px);
+    min-width: 1000px;
+    aspect-ratio: 16 / 9;
+    margin: auto;
+    margin-top: 2vh;
+    left: 0;
+}
+
+.video-wrap {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 74.5%;
+    height: 74%;
+    border-radius: 20px;
+}
+
+video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.frame {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter:
+        drop-shadow(0 0 20px rgba(35, 141, 241, 0.5))
+        drop-shadow(0 0 60px rgba(35, 141, 241, 0.3))
+        drop-shadow(0 0 100px rgba(35, 141, 241, 0.2));
+}
+
+/* ── 4. choice — top left corner of page ── */
+.choice {
+    position: fixed;
+    top: 10vh;
+    left: 5vw;
+    width: clamp(160px, 13vw, 280px);
+    display: inline-block;
+    z-index: 15;
+}
+
+.choice img {
+    width: 100%;
+    filter:
+        drop-shadow(0 0 20px rgba(35, 141, 241, 0.5))
+        drop-shadow(0 0 60px rgba(35, 141, 241, 0.3))
+        drop-shadow(0 0 60px rgba(35, 141, 241, 0.2));
+}
+
+.choice:hover img {
+    transform: scale(1.05);
+}
+
+/* ── 5. sceneicon — top right corner of page ── */
+.sceneicon {
+    position: fixed;
+    top: 2vh;
+    right: 5vw;
+    width: clamp(30px, 15vw, 300px);
+    z-index: 15;
+    pointer-events: none;
+    filter: 
+        drop-shadow(0 0 20px rgba(35, 141, 241, 0.5))
+        drop-shadow(0 0 60px rgba(35, 141, 241, 0.3))
+        drop-shadow(0 0 60px rgba(35, 141, 241, 0.2));
+}
+
+/* ── 2. Pause — bottom left corner of frame ── */
+.Pause {
+    position: absolute;
+    bottom: -0.5%;
+    left: 14%;
+    z-index: 15;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.playicon {
+    width: clamp(30px, 10vw, 100px);
+    display: block;
+    filter: brightness(0) saturate(100%) invert(93%) sepia(85%) saturate(5561%) hue-rotate(302deg) brightness(103%) contrast(100%);
+    transition: 0.2s ease;
+}
+
+.Pause:hover .playicon {
+    transform: scale(1.1);
+}
+
+/* ── 3. source-bar — bottom right corner of frame ── */
+.source-bar {
+    position: absolute;
+    bottom: 3%;
+    right: -6%;
+    z-index: 15;
+    display: inline-block;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.source-bar.show-source {
+    opacity: 1;
+}
+
+.source-bg {
+    width: clamp(160px, 18vw, 340px);
+    display: block;
+}
+
+.source-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7vw;
+    color: #1a1a2e;
+    margin: 0;
+    text-align: left;
+    width: 70%;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: ellipsis;
+    width: 80%;
+    pointer-events: none;
+}
+
+/* ending-overlay fills video-wrap */
+.ending-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Snug spacing to fit options and replay nicely */
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.show-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.overlay-title {
+    color: white;
+    font-size: 2vw;
+    z-index: 2;
+    margin: 0;
+}
+
+.overlay-buttons {
+    display: flex;
+    gap: 40px;
+    z-index: 2;
+}
+
+.overlay-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.overlay-button img {
+    width: 16vw;
+    transition: 0.2s ease;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
+}
+
+.overlay-button:hover img {
+    transform: scale(1.05);
+}
+
+.overlay-shape {
+    position: absolute;
+    width: 35vw;
+    height: 35vw;
+    background: rgba(255,255,255,0.15);
+    border-radius: 40% 60% 30% 70% / 55% 30% 70% 45%;
+    filter: blur(30px);
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.show-shape {
+    opacity: 1;
+}
+
+.detail-panel {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 20px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.detail-panel.show-detail {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.detail-shape {
+    position: absolute;
+    inset: 0;
+    background: white;
+    border-radius: 55% 45% 60% 40% / 40% 55% 45% 60%;
+    filter: blur(18px);
+    transform: scale(1.2);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.detail-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 85%;
+    gap: 24px;
+}
+
+.detail-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    padding-left: 8px;
+    min-width: 0;
+    max-width: 65%;
+}
+
+.detail-top-row {
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 1.2vw;
+    color: #1a1a2e;
+    margin: 0;
+}
+
+.detail-verdict {
+    font-size: 1.3vw;
+    font-weight: bold;
+}
+
+.detail-verdict.green { color: #2e9e4f; }
+.detail-verdict.red   { color: #d63031; }
+
+.detail-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1vw;
+    color: #1a1a2e;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.detail-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-right: 8px;
+    flex-shrink: 0;
+}
+
+.detail-right img {
+    width: 7vw;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.detail-confirm {
+    position: relative;
+    z-index: 2;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: inline-block;
+}
+
+.detail-confirm img {
+    width: clamp(120px, 10vw, 215px);
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+    display: block;
+}
+
+.detail-confirm:hover img {
+    transform: scale(1.05);
+}
+
+.detail-confirm span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: clamp(10px, 1vw, 16px);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.video-play-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    z-index: 4;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.video-play-indicator.visible {
+    opacity: 1;
+}
+
+.video-play-indicator svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ==========================================================================
+   UNIFIED BUTTON INNER CONTAINERS (SHARED LAYOUT DESIGN)
+   ========================================================================== */
+
+.retry-btn .btn-inner,
+.overlay-replay-btn .btn-inner,
+.good-replay-btn .btn-inner {
+    position: relative;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   FIXED: REPLAY SCENE OVERLAY COMPONENT (INSIDE OVERLAYS)
+   ========================================================================== */
+
+.overlay-replay-btn {
+    position: relative;
+    margin-top: 15px;
+    z-index: 2;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+    
+    /* Force-hidden on page load */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Only shows up when the parent overlay container is active */
+.show-overlay .overlay-replay-btn {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.overlay-replay-btn img {
+    width: clamp(120px, 10vw, 215px);
+    display: block;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+    transition: 0.2s ease;
+}
+
+.overlay-replay-btn:hover img {
+    transform: scale(1.05);
+}
+
+.overlay-replay-btn span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: clamp(10px, 1vw, 16px);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   ABSOLUTE CHASSIS ACTION BUTTONS (FORCE-HIDDEN BY DEFAULT)
+   ========================================================================== */
+
+/* Bad End Retry Button */
+.retry-btn {
+    position: absolute;
+    top: 88%; 
+    left: 20%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 6;
+    transition: 0.3s ease;
+
+    /* Hidden until JS triggers it */
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Trigger class for Bad End Retry */
+.retry-btn.show-retry {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.retry-btn img {
+    width: clamp(120px, 10vw, 215px);
+    display: block;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+    transition: 0.2s ease;
+}
+
+.retry-btn:hover img {
+    transform: scale(1.05);
+}
+
+.retry-btn span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: clamp(10px, 1vw, 16px);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Good Ending Screen Navigation Button */
+.good-end-btn {
+    position: absolute;
+    top: 88%; 
+    left: 35%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 6;
+    transition: 0.3s ease;
+
+    /* Hidden until JS triggers it */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.good-end-btn.show-good-end {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.good-end-btn img {
+    width: clamp(120px, 10vw, 215px);
+    display: block;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+    transition: 0.2s ease;
+}
+
+.good-end-btn:hover img {
+    transform: scale(1.05);
+}
+
+.good-end-btn span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: clamp(10px, 1vw, 16px);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Good Ending Left-Aligned Replay Button */
+.good-replay-btn {
+    position: absolute;
+    top: 88%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 6;
+    transition: 0.3s ease;
+
+    /* Hidden until JS triggers it */
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Assuming this uses show-retry or custom visibility state in your JS */
+.good-replay-btn.show-retry,
+.good-replay-btn.show-good-end {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.good-replay-btn img {
+    width: clamp(120px, 10vw, 215px);
+    display: block;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+    transition: 0.2s ease;
+}
+
+.good-replay-btn:hover img {
+    transform: scale(1.05);
+}
+
+.good-replay-btn span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: clamp(10px, 1vw, 16px);
+    white-space: nowrap;
+    pointer-events: none;
+}

@@ -1,0 +1,179 @@
+body {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #EEF5F5 0%,
+        #D6ECF5 50%,
+        #A8D8F0 100%
+    );
+
+    background-attachment: fixed;
+}
+
+.viewport {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    overflow: visible;      /* ← changed from hidden */
+}
+
+.info-group {
+    position: relative;     /* ← changed from absolute */
+    margin-top: -50vh;       /* ← pushes below viewport hero */
+    left: 8%;
+    width: 67%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 2vh, 30px);
+    z-index: 5;
+}
+
+.infotext {
+    width: 67%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 5;
+}
+
+.para1, .para2 {
+    font-size: 1.042vw;
+}
+
+.cta {
+    font-size: 30px;
+}
+
+.bartop {
+  position: absolute;
+
+  top: 5vh;
+  right: 8%;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+
+  gap: clamp(20px, 4vw, 80px);
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.bartop a{
+  text-decoration: none;
+  color: #2a6a9a;
+  font-size: 20px;
+  position: relative;
+}
+
+.bartop a::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -8px;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: black;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.bartop a:hover::after {
+    transform: scaleX(1);
+}
+
+.content {
+    position: relative;
+    z-index: 5;
+}
+
+.title {
+    position: absolute;
+    top: 10vh;
+    left: 10vh;
+}
+
+.title img {
+    width: clamp(200px, 70%, 600px);   /* ← constrain logo on small screens */
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 10;
+}
+
+.insta, .email {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.insta img, .email img {
+    width: 40px;
+    filter: drop-shadow(0 2px 5px rgba(73, 65, 79, 0.3));
+}
+
+.insta span, .email span {
+    color: black;
+    font-size: 20px;
+}
+
+.insta:hover img {
+    content: url("svg button/insta hover.svg");
+}
+
+.email:hover img {
+    content: url("svg button/email hover.svg");
+}
+
+.dekor {
+    position: absolute;
+    top: 60vh;
+    left: 80vh;
+    z-index: 5;
+}
+
+.dekor img {
+    width: 50vw;
+    max-width: 1000px;
+    transform: scaleX(-1);
+}
+
+.blob {
+    position: absolute;
+    left: 50%;
+    width: 60vw;
+    height: 40vw;
+    background: radial-gradient(
+        circle at 30% 30%,
+        #c7d2d6 0%,
+        #D9F1FF 30%,
+        #A8D8F0 70%,
+        #4c9bb5 100%
+    );
+    border-radius:
+        40% 60% 30% 70% /
+        55% 30% 70% 45%;
+    transform: rotate(20deg);
+    box-shadow: 0 0 80px rgba(35, 141, 241, 0.39);
+    opacity: 0.8;
+}

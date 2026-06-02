@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sesak.css">
+    <link href="https://fonts.googleapis.com/css?family=Preahvihear:400" rel="stylesheet">
+    <title>PetAid Siaga!</title>
+    <link rel="icon" href="asset/icon.png">
+</head>
+
+<body>
+    <div class="VID">
+
+        <div class="video-wrap">
+
+            <video id="myVideo">
+                <source src="render2/Story 2 General Scenario.mp4" type="video/mp4">
+            </video>
+
+            <!-- play indicator overlay on video -->
+            <div class="video-play-indicator" id="playIndicator">
+                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="38" fill="rgba(0,0,0,0.45)"/>
+                    <polygon points="30,20 65,40 30,60" fill="white"/>
+                </svg>
+            </div>
+
+            <div class="ending-overlay">
+                <p class="overlay-title">Apa yang ingin kamu lakukan?</p>
+
+                <div class="overlay-buttons">
+                    <button class="overlay-button choice-trigger"
+                        data-hover="asset/Sesak 1 Hover.png"
+                        data-idle="asset/Sesak 1 Idle.png"
+                        data-text="Sesak napas pada kucing adalah kondisi darurat yang tidak boleh dianggap sepele atau ditunda penangannya! Perlu diketahui, kucing adalah obligate nasal breathers — artinya mereka bernapas utamanya lewat hidung. Jadi kalau kucing terlihat bernapas lewat mulut, itu sudah jadi tanda bahwa ada sesuatu yang tidak beres.
+Selain itu, sesak napas bisa disebabkan oleh banyak kondisi yang berbeda-beda dan tidak bisa langsung diidentifikasi begitu saja. Maka dari itu, anggap saja semua kasus sesak napas sebagai kondisi serius dan segera bawa ke dokter hewan ya!"
+                        data-video="render2/Story 2 Good.mp4"
+                        data-choice="choice1"
+                        data-verdict="BETUL!"
+                        data-verdict-color="green"
+                        data-explain1="image/image1.png"
+                        data-explain2="image/image2.png"
+                        data-source="Sumber: <br> 1. Feline Emergency and Critical Care Second Edition; Upper Airway Disease <br> 2. Zoetis ft. FGS">
+                        <img src="asset/Sesak 1 Idle.png">
+                    </button>
+
+                    <button class="overlay-button choice-trigger"
+                        data-hover="asset/Sesak 2 Hover.png"
+                        data-idle="asset/Sesak 2 Idle.png"
+                        data-text="Sesak napas pada kucing adalah kondisi darurat yang perlu segera ditangani — jangan ditunda! Ingat, kucing normalnya bernapas lewat hidung, jadi kalau sudah bernapas lewat mulut, itu pertanda ada masalah yang harus segera ditindaklanjuti.
+Menenangkan kucing dengan makanan basah boleh-boleh saja, tapi jangan terlalu lama ya — segera bawa ke dokter hewan agar kondisinya tidak semakin memburuk."
+                        data-video="render2/Story 2 Bad.mp4"
+                        data-choice="choice2"
+                        data-verdict="SALAH!"
+                        data-verdict-color="red"
+                        data-explain1="image/image1.png"
+                        data-explain2="image/image2.png"
+                        data-source="Sumber: <br> 1. Feline Emergency and Critical Care Second Edition; Upper Airway Disease <br> 2. Zoetis ft. FGS">
+                        <img src="asset/Sesak 2 Idle.png">
+                    </button>
+                </div>
+
+                <!-- replay button on choice selection screen -->
+                <button class="replay-btn" id="replayOnChoice">
+                    <div class="btn-inner">
+                        <img src="svg button/button2.svg">
+                        <span>Ulangi</span>
+                    </div>
+                </button>
+
+                <div class="overlay-shape"></div>
+            </div>
+
+            <div class="detail-panel">
+                <div class="detail-shape"></div>
+
+                <div class="detail-content">
+                    <div class="detail-left">
+                        <p class="detail-top-row">
+                            Pilihanmu.... <span class="detail-verdict"></span>
+                        </p>
+                        <p class="detail-text"></p>
+                    </div>
+
+                    <div class="detail-right">
+                        <img class="detail-img1" src="">
+                        <img class="detail-img2" src="">
+                    </div>
+                </div>
+
+                <button class="detail-confirm">
+                    <img src="svg button/button3.svg">
+                    <span>Lanjut</span>
+                </button>
+            </div>
+
+            <!-- bad ending retry button -->
+            <button class="retry-btn">
+                <div class="btn-inner">
+                    <img src="svg button/button2.svg">
+                    <span>Coba Ulang</span>
+                </div>
+            </button>
+
+            <!-- good ending replay button -->
+            <button class="good-end-btn" id="goodEndBtn">
+                <div class="btn-inner">
+                    <img src="svg button/button2.svg">
+                    <span>Ulangi</span>
+                </div>
+            </button>
+
+        </div>
+
+        <div class="Pause">
+            <img class="playicon" src="svg button/noun-play-button-6124838.svg">
+        </div>
+
+        <div class="source-bar">
+            <img class="source-bg" src="webp/clippy.webp">
+            <p class="source-text"></p>
+        </div>
+
+        <div class="frame">
+            <img src="fixedass/framed2.webp">
+        </div>
+
+    </div>
+
+    <!-- audio elements -->
+    <audio id="sfxCorrect" src="sfx/correct.mp3" preload="auto"></audio>
+    <audio id="sfxWrong" src="sfx/wrong.mp3" preload="auto"></audio>
+
+    <a href="Choice.html" class="choice">
+        <img src="fixedass/Back Button2.1.svg">
+    </a>
+
+    <img class="sceneicon" src="fixedass/sesak 2.svg">
+
+    <script src="pause 2.js"></script>
+</body>
+</html>
