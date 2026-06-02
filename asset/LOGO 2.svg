@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 755.41 417">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: .86px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #c19c6b;
+      }
+
+      .cls-1, .cls-3 {
+        stroke: #a8783f;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        fill: #a8783f;
+      }
+
+      .cls-4, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        font-family: Handlee-Regular, Handlee;
+        font-size: 114.89px;
+      }
+
+      .cls-6, .cls-7 {
+        fill: #ba3c3c;
+      }
+
+      .cls-8 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-9 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-10 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-11 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-7 {
+        font-family: RealityCheckDEMO-Regular, 'Reality Check DEMO';
+        font-size: 171.23px;
+      }
+
+      .cls-12 {
+        letter-spacing: -.08em;
+      }
+
+      .cls-3 {
+        stroke-width: 1.52px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <image width="996" height="1300" transform="translate(61.28) rotate(9.4) scale(.29)" xlink:href="../../mascot.png"/>
+    <g>
+      <rect class="cls-2" x="671.52" y="263.52" width="114.7" height="32.64" rx="9.56" ry="9.56" transform="translate(1160.34 -370.84) rotate(102.55)"/>
+      <rect class="cls-3" x="708.09" y="268.09" width="41.96" height="21.68" rx="4.71" ry="4.71" transform="translate(1159.7 -372.15) rotate(102.55)"/>
+      <circle class="cls-4" cx="735.58" cy="269.39" r="1.63"/>
+      <circle class="cls-4" cx="726.63" cy="267.4" r="1.63"/>
+      <circle class="cls-4" cx="733.05" cy="280.77" r="1.63"/>
+      <circle class="cls-4" cx="724.1" cy="278.78" r="1.63"/>
+      <circle class="cls-4" cx="721.8" cy="289.09" r="1.63"/>
+      <circle class="cls-4" cx="730.75" cy="291.09" r="1.63"/>
+    </g>
+    <g>
+      <rect class="cls-2" x="697.2" y="341.18" width="24.99" height="32.64" rx="5.43" ry="5.43" transform="translate(1212.81 -257.6) rotate(102.54)"/>
+      <rect class="cls-1" x="702.96" y="346.66" width="13.47" height="21.68" rx="3.28" ry="3.28" transform="translate(1212.81 -257.6) rotate(102.54)"/>
+    </g>
+    <text class="cls-7" transform="translate(196.98 362.7)"><tspan class="cls-10" x="0" y="0">S</tspan><tspan class="cls-11" x="95.03" y="0">I</tspan><tspan class="cls-8" x="142.98" y="0">A</tspan><tspan class="cls-12" x="255.82" y="0">G</tspan><tspan x="362.32" y="0">A</tspan></text>
+    <text class="cls-6" transform="translate(220.89 231.12)"><tspan class="cls-9" x="0" y="0">P</tspan><tspan x="75.14" y="0">et</tspan><tspan class="cls-5" x="170.61" y="0">A</tspan><tspan x="249.65" y="0">id</tspan></text>
+  </g>
+</svg>
